@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Cold-Hot</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://unpkg.com/idb@5/build/iife/index-min.js"></script>
 </head>
 <body>
 
@@ -11,13 +12,26 @@
   <hgroup>
   <h1>Cold-Hot</h1> 
   </hgroup>
-    <form action="" method="post" onsubmit="return false;">
-    <input type="text" id="guess" placeholder="Введите число">
-    <input type="button" id="button" value="Угадать" onclick="startGame()">
+
+  <div align = "center" id = 'menu'>
+    <p><input type = 'button' id = 'startGame' value = 'Начать игру' class='button'></input>
+    <p><input type = 'button' id = 'showGames' value = 'Список игр' class='button'></input>
+    <p><input type = 'button' id = 'showReplay' value = 'Показать игру' class='button'></input>
+  </div>
+
+  <div id = 'game' class='hidden'>
+    <form action="" method="post" onkeypress="if(event.keyCode == 13) return false;">
+      <input type="text" id="guess" placeholder="Введите число">
+      <input type="button" onsubmit="return false;" id="gameButton" value="Угадать">
     </form>
+  </div>
+
+  <div align = "center" id = 'header' class='hidden'></div>
+  <div align = "center" id = 'info' class='hidden'></div>
+
 </div>
 
 </body>
-<script src="View.js" type="module"></script>
+<script type="module" src="Controller.js"></script>
 </html>
 
