@@ -1,20 +1,20 @@
-let gameField = document.getElementById("game");
-let gameInfo = document.getElementById("info");
-let headerBlock = document.getElementById("header");
+let field = document.getElementById("game");
+let info = document.getElementById("info");
+let header = document.getElementById("header");
 
-export let hideElement = (element) => {
-    element.classList.add('hidden');
+export let hide = (element) => {
+    element.classList.add("hidden");
 }
 
-export let unhideElement = (element) => {
-    element.classList.remove('hidden');
+export let show = (element) => {
+    element.classList.remove("hidden");
 }
 
-export let drawGamesInfoTable = (element, array) => {
-    hideElement(gameField, 'hidden');
-    unhideElement(gameInfo, 'hidden');
-    unhideElement(headerBlock, 'hidden');
-    headerBlock.innerHTML = "<h2>Информация об играх</h2>";
+export let showAllInfo = (array) => {
+    hide(field, "hidden");
+    show(info, "hidden");
+    show(header, "hidden");
+    header.innerHTML = "<h2>Информация об играх</h2>";
     let html = "<table><tr>";
     html += "<th>id игры</th>";
     html += "<th>Имя игрока</th>";
@@ -32,14 +32,14 @@ export let drawGamesInfoTable = (element, array) => {
         html += "</tr>";
     }
     html += "</table>";
-    element.innerHTML = html;
+    info.innerHTML = html;
 }
 
-export let drawConcreteGameTable = (element, array, gameId) => {
-    hideElement(gameField, 'hidden');
-    unhideElement(gameInfo, 'hidden');
-    unhideElement(headerBlock, 'hidden');
-    headerBlock.innerHTML = "<h2>Информация об игре с id = " + gameId + "</h2>";
+export let showGameInfo = (array, gameId) => {
+    hide(field, 'hidden');
+    show(info, 'hidden');
+    show(header, 'hidden');
+    header.innerHTML = "<h2>Информация об игре с id = " + gameId + "</h2>";
     let html = "<table><tr>";
     html += "<th>Номер хода</th>";
     html += "<th>Введенное число</th>";
@@ -53,5 +53,5 @@ export let drawConcreteGameTable = (element, array, gameId) => {
         html += "</tr>";
     }
     html += "</table>";
-    element.innerHTML = html;
+    info.innerHTML = html;
 } 

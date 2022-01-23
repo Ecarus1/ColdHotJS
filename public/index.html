@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cold-Hot</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://unpkg.com/idb@5/build/iife/index-min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <hgroup>
+      <h1>Cold-Hot</h1> 
+      </hgroup>
+      <div id="menu">
+        <p><input type = 'button' id = 'startGame' value = 'Начать игру' class='button'></input>
+        <p><input type = 'button' id = 'showGames' value = 'Список игр' class='button'></input>
+        <p><input type = 'button' id = 'showReplay' value = 'Показать игру' class='button'></input>
+      </div>
+      <div id="game" class="hidden">
+        <input type="text" id="guess" placeholder="Введите число" onkeydown = "if (event.keyCode == 13) document.getElementById('button').click()">
+        <input type="button" id="button" value="Угадать">
+      </div>
+      <div id = 'header' class='hidden'></div>
+      <div id = 'info' class='hidden'></div>
+    </div>
+  </body>
+  <script src="src/Controller.js" type="module">
+  </script>
+</html>
